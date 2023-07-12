@@ -11,23 +11,23 @@ def calculate_bpm(file_path):
 
     return tempo
 
-# Prompt the user to enter the path to the FLAC file
-flac_file_path = input("Enter the path to the FLAC file: ")
+# Prompt the user to enter the path to the file
+music_file_path = input("Enter the path to the file: ")
 
 # Remove surrounding double quotation marks
-flac_file_path = flac_file_path.strip('"')
+music_file_path = music_file_path.strip('"')
 
 # Normalize the file path
-flac_file_path = os.path.normpath(flac_file_path)
+music_file_path = os.path.normpath(music_file_path)
 
 # Calculate the BPM
-bpm = calculate_bpm(flac_file_path)
+bpm = calculate_bpm(music_file_path)
 
 # Round the BPM to the nearest whole number
 rounded_bpm = round(bpm)
 
 # Format and output the BPM values
-output = f"The BPM of the FLAC file is:\nNon-rounded: {bpm}\nRounded: {rounded_bpm}"
+output = f"\nThe BPM of the file is:\nNon-rounded: {bpm}\nRounded: {rounded_bpm}\n"
 print(output)
 
 # Copy the rounded BPM to the clipboard
